@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: roar-deploy-k8s
+spec:
+  destination:
+    namespace: roar
+    server: https://10.0.2.15:8443
+  source:
+    path: .
+    repoURL: https://github.com/brentlaster/roar-deploy-k8s
+    targetRevision: HEAD
+  project: default
+
+
