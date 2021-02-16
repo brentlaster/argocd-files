@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: helmproj
+  namespace: argocd
+spec:
+  destinations:
+  - namespace: helm-demo
+    server: https://10.0.2.15:8443
+  sourceRepos:
+  - git@10.0.2.15:/git/repos/roar-k8s-helm.git
+
